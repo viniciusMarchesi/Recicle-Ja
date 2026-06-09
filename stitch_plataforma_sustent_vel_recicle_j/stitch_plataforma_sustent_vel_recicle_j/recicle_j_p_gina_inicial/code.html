@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-br"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Recicle-Já - Transformando o Futuro</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary": "#ffffff",
+                        "surface-container-highest": "#e1e3e4",
+                        "surface-container-low": "#f3f4f5",
+                        "error": "#ba1a1a",
+                        "on-tertiary-container": "#fdfcff",
+                        "error-container": "#ffdad6",
+                        "outline": "#6e7b6c",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed-variant": "#3d4756",
+                        "tertiary-fixed": "#d9e3f6",
+                        "tertiary": "#525d6c",
+                        "on-tertiary-fixed": "#121c2a",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "surface-variant": "#e1e3e4",
+                        "on-background": "#191c1d",
+                        "inverse-primary": "#62df7d",
+                        "on-primary-fixed-variant": "#005320",
+                        "surface-bright": "#f8f9fa",
+                        "surface-container": "#edeeef",
+                        "primary-fixed": "#7ffc97",
+                        "primary": "#006b2c",
+                        "on-primary-fixed": "#002109",
+                        "tertiary-fixed-dim": "#bdc7d9",
+                        "secondary-fixed": "#e2e2e2",
+                        "inverse-on-surface": "#f0f1f2",
+                        "on-primary": "#ffffff",
+                        "on-primary-container": "#f7fff2",
+                        "inverse-surface": "#2e3132",
+                        "secondary-fixed-dim": "#c6c6c7",
+                        "primary-fixed-dim": "#62df7d",
+                        "tertiary-container": "#6b7586",
+                        "on-secondary-container": "#616363",
+                        "surface-tint": "#006e2d",
+                        "surface-container-high": "#e7e8e9",
+                        "background": "#f8f9fa",
+                        "on-surface": "#191c1d",
+                        "secondary-container": "#dfe0e0",
+                        "on-surface-variant": "#3e4a3d",
+                        "primary-container": "#00873a",
+                        "surface": "#f8f9fa",
+                        "on-secondary-fixed-variant": "#454747",
+                        "on-error-container": "#93000a",
+                        "secondary": "#5d5f5f",
+                        "on-tertiary": "#ffffff",
+                        "outline-variant": "#bdcaba",
+                        "surface-dim": "#d9dadb"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "12px",
+                        "xl": "80px",
+                        "lg": "48px",
+                        "base": "8px",
+                        "md": "24px",
+                        "xs": "4px",
+                        "gutter": "24px",
+                        "container-max": "1200px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Plus Jakarta Sans"],
+                        "label-sm": ["Plus Jakarta Sans"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "label-sm": ["12px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "headline-lg": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .soft-shadow {
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #16A34A;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface">
+<!-- Header Section -->
+<header class="bg-primary dark:bg-primary-container shadow-sm sticky top-0 z-50 transition-all duration-300" id="top-nav">
+<div class="flex justify-between items-center w-full px-gutter py-sm max-w-container-max mx-auto">
+<div class="flex items-center gap-sm">
+<img alt="Recicle-Já Logo" class="h-10 w-10 object-contain bg-white rounded-full p-1" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRM9ImvqKPQJBh6uZfWuGdqaBNjjCivTA9Z2r8psLRGvfWxqX8hPPkKVdzLj8kJkFedhxGRFbbTBLsZTTkY0dOevR4lNGc0x7nYGCxb0L7EbNHEO4gLXPjPt5EV3soiy0-owfjGQ4lvIJQhU-ZHD35vQOA9wy0Y5vhAtYAqWrSdSic7HlmT6f-Xhk1EY1dImmoVUvGh5RECuArkQAq8DRjn-b5TpeJeSpnsm-ETxgf40XVyYws20KXDErjHTFbfhrP9lrRX2r8_A"/>
+<span class="font-headline-md text-headline-md font-bold text-on-primary dark:text-on-primary-container">Recicle-Já</span>
+</div>
+<nav class="hidden md:flex gap-md items-center">
+<a class="text-on-primary font-bold border-b-2 border-on-primary pb-1 font-body-md text-body-md hover:opacity-90 transition-opacity" href="#">Mapa</a>
+<a class="text-on-primary/80 font-medium font-body-md text-body-md hover:opacity-90 transition-opacity" href="#guia">Guia</a>
+<a class="text-on-primary/80 font-medium font-body-md text-body-md hover:opacity-90 transition-opacity" href="#">Impacto</a>
+<a class="text-on-primary/80 font-medium font-body-md text-body-md hover:opacity-90 transition-opacity" href="#">Sobre</a>
+<button class="bg-on-primary text-primary px-md py-xs rounded-full font-label-md text-label-md hover:scale-105 transition-transform active:scale-95">Entrar</button>
+</nav>
+<button class="md:hidden text-on-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<main class="max-w-container-max mx-auto px-gutter py-lg flex flex-col gap-xl">
+<!-- Action Section -->
+<section class="bg-surface-container-lowest rounded-xl p-md md:p-lg soft-shadow flex flex-col items-center text-center gap-md border border-surface-container-highest">
+<h1 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary max-w-3xl">
+                Olá! Por favor, escolha o tipo de resíduo que você gostaria de descartar: ♻️📦
+            </h1>
+<div class="flex flex-col md:flex-row gap-sm w-full max-w-2xl mt-sm">
+<div class="relative flex-grow">
+<select class="w-full h-12 bg-white border border-outline-variant rounded-lg px-md font-body-md text-body-md appearance-none focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all cursor-pointer">
+<option disabled="" selected="" value="">Selecione um tipo de resíduo</option>
+<option value="plastico">Plástico</option>
+<option value="vidro">Vidro</option>
+<option value="papelao">Papelão</option>
+<option value="metais">Metais</option>
+</select>
+<span class="material-symbols-outlined absolute right-md top-1/2 -translate-y-1/2 pointer-events-none text-outline">expand_more</span>
+</div>
+<button class="bg-primary hover:bg-primary-container text-on-primary h-12 px-lg rounded-lg font-label-md text-label-md flex items-center justify-center gap-xs transition-all duration-200 active:scale-95 whitespace-nowrap">
+<span class="material-symbols-outlined">search</span>
+                    Buscar locais de descarte
+                </button>
+</div>
+</section>
+<!-- Bento Layout: Map and Info -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-md items-stretch">
+<!-- Map Container -->
+<section class="lg:col-span-8 bg-surface-container rounded-xl overflow-hidden min-h-[500px] border border-surface-container-highest flex flex-col relative group">
+<div class="absolute top-md left-md z-10 flex gap-sm">
+<span class="bg-white/90 backdrop-blur-md px-md py-xs rounded-full text-label-md font-label-md flex items-center gap-xs border border-surface-container-highest">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">location_on</span>
+                        Campinas-SP
+                    </span>
+</div>
+<div class="w-full h-full bg-cover bg-center" data-location="Campinas, Brazil" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCFyQ1LDJ8aTijRGOWokOD-zuQlqxcRyRmmhWe5LlSJbt3T80svGG32K-ATBe0FeZwUme7ZfeuJiZymWszurH5ChRlvxp-1u21LSX-tMtvm2f1c3SiEKVRimpwvMW6Tc3SyQbX-W1Pn3FoJW31D_UVn46aUE2HXeTGYqknl4QmALiPIe-pSJs6Mjq4rAD17rMnBk2G3DmwVV4YepJvmEgNHvJnkEv5qigRfZqwhv_YuscIprVVGZ2sWQZGek_Ymv3pp9v5VPbDVCg')">
+<div class="absolute inset-0 bg-black/5 pointer-events-none"></div>
+</div>
+<div class="absolute bottom-md left-1/2 -translate-x-1/2 flex items-center gap-sm bg-white/95 backdrop-blur-sm p-sm rounded-xl shadow-lg border border-surface-container-highest">
+<span class="text-label-sm font-label-sm text-secondary">3 locais encontrados próximos a você</span>
+<button class="bg-primary text-on-primary px-md py-xs rounded-lg text-label-sm font-label-sm">Ver Lista</button>
+</div>
+</section>
+<!-- Feedback Sidebar -->
+<section class="lg:col-span-4 flex flex-col gap-md">
+<div class="bg-primary text-on-primary p-md rounded-xl flex flex-col gap-sm shadow-md transition-transform hover:-translate-y-1">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-on-primary" style="font-variation-settings: 'FILL' 1;">eco</span>
+<span class="font-label-md text-label-md">Dica de Coleta</span>
+</div>
+<p class="font-body-md text-body-md leading-relaxed">
+                        Você deve descartar os <span class="font-bold">Metais</span> na <span class="underline">Casa de Concreto 02</span>, localizada a apenas 500m da sua posição atual.
+                    </p>
+</div>
+<div class="bg-primary-container text-on-primary-container p-md rounded-xl flex flex-col gap-sm shadow-md border border-primary/20">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="font-label-md text-label-md">Impacto Positivo</span>
+</div>
+<p class="font-body-md text-body-md leading-relaxed italic">
+                        "Incrível! Você reciclou metais! Isso faz uma grande diferença para o nosso planeta. Cada grama de alumínio reciclado economiza 95% da energia necessária para produzir alumínio novo."
+                    </p>
+</div>
+<div class="bg-white p-md rounded-xl border border-surface-container-highest flex-grow flex flex-col justify-center gap-sm">
+<h3 class="font-headline-md text-headline-md text-primary">Seu Progresso</h3>
+<div class="h-2 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary w-3/4 rounded-full"></div>
+</div>
+<span class="text-label-sm font-label-sm text-secondary">Você já evitou a emissão de 12kg de CO2 este mês.</span>
+</div>
+</section>
+</div>
+<!-- Practical Guide Section -->
+<section class="flex flex-col gap-lg bg-surface-container-lowest p-md md:p-lg rounded-xl border border-surface-container-highest soft-shadow" id="guia">
+<div class="flex flex-col gap-xs">
+<h2 class="font-headline-lg text-headline-lg text-primary">Guia Prático: Como Descartar o Lixo de Maneira Responsável</h2>
+<div class="h-1 w-24 bg-primary rounded-full"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-lg items-center">
+<div class="rounded-xl overflow-hidden shadow-lg border border-surface-container-highest aspect-[4/3]">
+<img alt="People recycling responsibly" class="w-full h-full object-cover" data-alt="A diverse group of environmentally conscious people are working together in a modern, bright community center to sort through various types of household waste for recycling. The room is flooded with natural sunlight, highlighting the clean white walls and organized recycling bins. The atmosphere is optimistic and educational, focusing on sustainability and community effort with a soft green and neutral color palette. High-end lifestyle photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAI7L0p9uTOOsg8OXAN9FX14kbZC6aZ8Oe66lf_TnS7_dCyV5YNOXmkpt42fU1r-iiRl-PtWbVfsYRoQxdU_ub0pxmBgeG4tjrtx-hy3b4if_I-f1yQVJ8ydccYQtIOTDomgk4atrwQFsLbXzSrJpF_0T4QRAi7GBV2C93x5__jL4wG58nm8MNo6-DQUgYjimnqUVtw0bFjqBPufKHqnxHQKUm6mV0eG4rgpcRMGlYWEOqss2dYLyiwSrzjnRCv36F6B2_IfwLW7A"/>
+</div>
+<div class="flex flex-col gap-md">
+<h3 class="font-headline-md text-headline-md text-primary flex items-center gap-sm">
+<span class="material-symbols-outlined">checklist</span>
+                        Passo 1: Separação Consciente
+                    </h3>
+<ul class="flex flex-col gap-sm">
+<li class="flex gap-sm items-start">
+<span class="flex items-center justify-center bg-primary-container text-on-primary-container w-8 h-8 rounded-full shrink-0 font-bold">1</span>
+<p class="font-body-md text-body-md text-on-surface-variant"><span class="font-bold">Lave as embalagens:</span> Resíduos de comida contaminam o lote e impedem a reciclagem do papel e plástico.</p>
+</li>
+<li class="flex gap-sm items-start">
+<span class="flex items-center justify-center bg-primary-container text-on-primary-container w-8 h-8 rounded-full shrink-0 font-bold">2</span>
+<p class="font-body-md text-body-md text-on-surface-variant"><span class="font-bold">Remova tampas e rótulos:</span> Sempre que possível, facilite o trabalho das cooperativas separando materiais diferentes.</p>
+</li>
+<li class="flex gap-sm items-start">
+<span class="flex items-center justify-center bg-primary-container text-on-primary-container w-8 h-8 rounded-full shrink-0 font-bold">3</span>
+<p class="font-body-md text-body-md text-on-surface-variant"><span class="font-bold">Amasse os metais:</span> Reduza o volume das latas de alumínio para otimizar o transporte.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-lg items-center md:flex-row-reverse">
+<div class="flex flex-col gap-md order-2 md:order-1">
+<h3 class="font-headline-md text-headline-md text-primary flex items-center gap-sm">
+<span class="material-symbols-outlined">compost</span>
+                        Passo 2: Além do Básico
+                    </h3>
+<div class="grid grid-cols-1 gap-sm">
+<div class="bg-white p-sm border border-surface-container-highest rounded-lg">
+<h4 class="font-label-md text-label-md text-primary">Compostagem</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Transforme restos de alimentos em adubo orgânico rico em nutrientes para suas plantas.</p>
+</div>
+<div class="bg-white p-sm border border-surface-container-highest rounded-lg">
+<h4 class="font-label-md text-label-md text-primary">Lixo Eletrônico</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Baterias e eletrônicos possuem metais pesados. Nunca descarte no lixo comum; use nossos pontos específicos.</p>
+</div>
+</div>
+</div>
+<div class="rounded-xl overflow-hidden shadow-lg border border-surface-container-highest aspect-[4/3] order-1 md:order-2">
+<img alt="Electronics recycling and composting" class="w-full h-full object-cover" data-alt="A close-up, high-detail photograph of a modern composting station and an organized electronic waste collection bin side-by-side in a minimalist urban setting. The compost bin shows lush green sprouts emerging from dark, rich soil, symbolizing life and renewal. The electronics bin features neatly arranged old smartphones and cables, emphasizing clean tech disposal. The lighting is soft and natural, with a focus on vibrant greens and clean silver tones, reflecting a sustainable lifestyle." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjVD9g3zXNEh_4RQBkNQJoTKPf0teMN9fggWcN5dV46RK0TsgkWJSsOe-nZfnYW7w6pGyqCZDQckr30e9NA0jyqprzoQ32nWL2vlE2p8BWVTtPvhSaTBBmKNTB5dme69y_9DMuxXDJHZ2NY6uUihM3mXC-hTErYFXA5Q3VSt1pNDvkmGKzeLZpq9KwuyBC7pmhvFMsVxKzrvkHKv8Id_08niUiWMtRYxDhSyHXN75nxJuv5jZMtoIJiIY-rx_cEDKdK3jQMZO97g"/>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-inverse-surface dark:bg-surface-dim mt-xl transition-colors duration-300">
+<div class="w-full px-gutter py-xl flex flex-col items-center gap-md max-w-container-max mx-auto">
+<div class="flex flex-col items-center gap-sm">
+<div class="flex items-center gap-sm">
+<img alt="Recicle-Já Logo" class="h-8 w-8 filter brightness-0 invert opacity-60" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRM9ImvqKPQJBh6uZfWuGdqaBNjjCivTA9Z2r8psLRGvfWxqX8hPPkKVdzLj8kJkFedhxGRFbbTBLsZTTkY0dOevR4lNGc0x7nYGCxb0L7EbNHEO4gLXPjPt5EV3soiy0-owfjGQ4lvIJQhU-ZHD35vQOA9wy0Y5vhAtYAqWrSdSic7HlmT6f-Xhk1EY1dImmoVUvGh5RECuArkQAq8DRjn-b5TpeJeSpnsm-ETxgf40XVyYws20KXDErjHTFbfhrP9lrRX2r8_A"/>
+<span class="font-headline-md text-headline-md font-bold text-surface-lowest">Recicle-Já</span>
+</div>
+<p class="text-secondary-fixed-dim text-center max-w-md font-body-md text-body-md">
+                    © 2024 Recicle-Já. Transformando o futuro através da reciclagem. Juntos por um mundo mais verde e sustentável.
+                </p>
+</div>
+<div class="flex flex-wrap justify-center gap-md my-sm">
+<a class="text-secondary-fixed-dim hover:text-primary-fixed font-medium transition-colors font-body-md text-body-md" href="#">Termos de Uso</a>
+<a class="text-secondary-fixed-dim hover:text-primary-fixed font-medium transition-colors font-body-md text-body-md" href="#">Privacidade</a>
+<a class="text-secondary-fixed-dim hover:text-primary-fixed font-medium transition-colors font-body-md text-body-md" href="#">Contato</a>
+<a class="text-secondary-fixed-dim hover:text-primary-fixed font-medium transition-colors font-body-md text-body-md" href="#">Parcerias</a>
+</div>
+<div class="flex gap-md">
+<a class="bg-on-secondary-fixed-variant p-2 rounded-full text-surface-lowest hover:bg-primary-fixed transition-colors" href="#">
+<svg class="w-6 h-6 fill-current" viewbox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path></svg>
+</a>
+<a class="bg-on-secondary-fixed-variant p-2 rounded-full text-surface-lowest hover:bg-primary-fixed transition-colors" href="#">
+<svg class="w-6 h-6 fill-current" viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849s-.012 3.584-.069 4.849c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.849-.07c-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849s.012-3.584.07-4.849c.149-3.225 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.058-1.28.072-1.689.072-4.947s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
+</a>
+</div>
+</div>
+</footer>
+<script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Simple header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('top-nav');
+            if (window.scrollY > 50) {
+                header.classList.add('py-xs', 'shadow-md');
+                header.classList.remove('py-sm', 'shadow-sm');
+            } else {
+                header.classList.add('py-sm', 'shadow-sm');
+                header.classList.remove('py-xs', 'shadow-md');
+            }
+        });
+    </script>
+</body></html>
