@@ -22,6 +22,14 @@ def api_pontos_coleta(request):
         
     pontos_list = []
     for p in pontos:
+        locais = []
+        for local in p.locais_descarte.filter(ativo=True):
+            locais.append({
+                'id': local.id,
+                'nome': local.nome,
+                'descricao': local.descricao,
+                'material': local.material.nome
+            })
         pontos_list.append({
             'id': p.id,
             'nome': p.nome,
@@ -29,7 +37,8 @@ def api_pontos_coleta(request):
             'latitude': float(p.latitude),
             'longitude': float(p.longitude),
             'materiais': [m.nome for m in p.materiais_aceitos.all()],
-            'icones_materiais': [m.icone for m in p.materiais_aceitos.all()]
+            'icones_materiais': [m.icone for m in p.materiais_aceitos.all()],
+            'locais_descarte':locais,
         })
         
     return JsonResponse(pontos_list, safe=False)

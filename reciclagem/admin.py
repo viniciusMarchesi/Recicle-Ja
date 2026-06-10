@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Material, PontoDeColeta, Feedback
+from .models import Material, PontoDeColeta, Feedback, LocalDeDescarte
 
 @admin.register(Material)
 class MaterialAdmin(admin.ModelAdmin):
@@ -26,3 +26,10 @@ class FeedbackAdmin(admin.ModelAdmin):
         queryset.update(lido=True)
         self.message_user(request, "Feedbacks selecionados foram marcados como lidos.")
     marcar_como_lido.short_description = "Marcar como lidos"
+
+@admin.register(LocalDeDescarte)
+class LocalDeDescarteAdmin(admin.ModelAdmin):
+    list_display = ("nome", "material", "ponto_coleta", "ativo")
+    list_filter = ("material", "ponto_coleta", "ativo")
+    search_fields = ("nome", "descricao")
+

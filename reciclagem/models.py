@@ -62,3 +62,15 @@ class Feedback(models.Model):
     def __str__(self):
         tipo_str = dict(self.TIPO_CHOICES).get(self.tipo_feedback, self.tipo_feedback)
         return f"{tipo_str} - {self.nome or 'Anônimo'}"
+
+
+
+class LocalDeDescarte(models.Model):
+    nome = models.CharField(max_length=150)  # Ex: "Caçamba 1"
+    descricao = models.TextField(blank=True)  # Informações extras
+    ponto_coleta = models.ForeignKey(PontoDeColeta, on_delete=models.CASCADE, related_name="locais_descarte")
+    material = models.ForeignKey(Material, on_delete=models.CASCADE, related_name="locais_descarte")
+    ativo = models.BooleanField(default=True)
+
+    def __str__(self):
+        return f"{self.nome} - {self.material.nome} ({self.ponto_coleta.nome})"
