@@ -108,7 +108,8 @@ body {
 }
 
 /* Form Styles */
-.form-control, .form-select {
+.form-control,
+.form-select {
     border-radius: 0.5rem;
     border: 1px solid #bdcaba;
     padding: 12px 16px;
@@ -117,7 +118,8 @@ body {
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.form-control:focus, .form-select:focus {
+.form-control:focus,
+.form-select:focus {
     border-color: var(--accent-color);
     box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.15);
     outline: none;
@@ -282,3 +284,20 @@ body {
     border: none !important;
 }
 
+.status-ativo {
+    color: #28a745;
+    /* verde */
+    font-weight: 600;
+}
+
+.status-indisponivel {
+    color: #dc3545;
+    /* vermelho */
+    font-weight: 600;
+}
+
+.status-manutencao {
+    color: #ffc107;
+    /* amarelo */
+    font-weight: 600;
+}

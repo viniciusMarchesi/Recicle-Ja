@@ -44,22 +44,45 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     // Renderiza popup customizado
                     let materiaisBadges = ponto.materiais.map(mat => `<span class="badge-material">${mat}</span>`).join("");
+
+                    // Lista de locais de descarte
                     let locaisListHtml = "";
                     if (ponto.locais_descarte && ponto.locais_descarte.length > 0) {
                         locaisListHtml = ponto.locais_descarte.map(local => `
-                        <div class="mb-1">
-                            <span class="badge-material">${local.material}</span>
-                            <strong>${local.nome}</strong><br>
-                            <span class="text-secondary">${local.descricao || "Sem descrição"}</span>
-                        </div>
-                    `).join("");
+                            <div class="mb-1">
+                                <span class="badge-material">${local.material}</span>
+                                <strong>${local.nome}</strong><br>
+                                <span class="text-secondary">${local.descricao || "Sem descrição"}</span>
+                            </div>
+                        `).join("");
                     } else {
                         locaisListHtml = "<small class='text-muted'>Nenhum local de descarte específico encontrado para este ponto.</small>";
                     }
+
+                    // Definir classe e ícone conforme status
+                    let statusClass = "status-ativo";
+                    let statusIcon = "🟢";
+                    if (ponto.status === "Indisponível") {
+                        statusClass = "status-indisponivel";
+                        statusIcon = "🔴";
+                    } else if (ponto.status === "Em manutenção") {
+                        statusClass = "status-manutencao";
+                        statusIcon = "🟡";
+                    }
+
+                    // Montar popup
                     let popupContent = `
                         <div class="p-1">
                             <h6 class="mb-1 text-success fw-bold">${ponto.nome}</h6>
-                            <p class="text-secondary small mb-2"><i class="bi bi-geo-alt-fill text-danger"></i> ${ponto.endereco}</p>
+                            <p class="text-secondary small mb-2">
+                                <i class="bi bi-geo-alt-fill text-danger"></i> ${ponto.endereco}
+                            </p>
+                            <p class="small mb-1">
+                                <strong>Status:</strong> <span class="${statusClass}">${statusIcon} ${ponto.status}</span>
+                            </p>
+                            <p class="small mb-2">
+                                <strong>Horário:</strong> ${ponto.horario_funcionamento || "Não informado"}
+                            </p>
                             <div class="mb-1"><strong>Aceita:</strong></div>
                             <div class="d-flex flex-wrap">${materiaisBadges}</div>
                             <div class="mt-2">
@@ -68,6 +91,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             </div>
                         </div>
                     `;
+
                     marker.bindPopup(popupContent);
                     markers.push(marker);
                     bounds.push([ponto.latitude, ponto.longitude]);

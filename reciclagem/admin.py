@@ -9,8 +9,8 @@ class MaterialAdmin(admin.ModelAdmin):
 
 @admin.register(PontoDeColeta)
 class PontoDeColetaAdmin(admin.ModelAdmin):
-    list_display = ('nome', 'endereco', 'latitude', 'longitude', 'ativo')
-    list_filter = ('ativo', 'materiais_aceitos')
+    list_display = ('nome', 'endereco', 'latitude', 'longitude', 'status', 'horario_funcionamento')
+    list_filter = ('status', 'materiais_aceitos')
     search_fields = ('nome', 'endereco')
     filter_horizontal = ('materiais_aceitos',)
 

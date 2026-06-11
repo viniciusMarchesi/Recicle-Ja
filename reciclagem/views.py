@@ -6,7 +6,7 @@ import json
 
 def home(request):
     materiais = Material.objects.all()
-    pontos = PontoDeColeta.objects.filter(ativo=True)
+    pontos = PontoDeColeta.objects.filter(status="Ativo")
     context = {
         'materiais': materiais,
         'pontos': pontos,
@@ -15,7 +15,7 @@ def home(request):
 
 def api_pontos_coleta(request):
     material_slug = request.GET.get('material', '').strip()
-    pontos = PontoDeColeta.objects.filter(ativo=True).distinct()
+    pontos = PontoDeColeta.objects.filter(status="Ativo").distinct()
     
     if material_slug:
         pontos = pontos.filter(materiais_aceitos__slug=material_slug)
@@ -39,6 +39,8 @@ def api_pontos_coleta(request):
             'materiais': [m.nome for m in p.materiais_aceitos.all()],
             'icones_materiais': [m.icone for m in p.materiais_aceitos.all()],
             'locais_descarte':locais,
+            'status': p.status,
+            'horario_funcionamento': p.horario_funcionamento or "Não informado"
         })
         
     return JsonResponse(pontos_list, safe=False)

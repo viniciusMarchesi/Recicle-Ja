@@ -21,7 +21,14 @@ class PontoDeColeta(models.Model):
     latitude = models.DecimalField("Latitude", max_digits=9, decimal_places=6)
     longitude = models.DecimalField("Longitude", max_digits=9, decimal_places=6)
     materiais_aceitos = models.ManyToManyField(Material, related_name="pontos_coleta", verbose_name="Materiais Aceitos")
-    ativo = models.BooleanField("Ativo", default=True)
+    
+    STATUS_CHOICES = [
+        ("Ativo", "Ativo"),
+        ("Indisponível", "Indisponível"),
+        ("Em manutenção", "Em manutenção"),
+    ]
+    status = models.CharField("Status", max_length=20, choices=STATUS_CHOICES, default="Ativo")
+    horario_funcionamento = models.CharField("Horário de Funcionamento", max_length=100, blank=True, null=True)
 
     class Meta:
         verbose_name = "Ponto de Coleta"
@@ -30,6 +37,7 @@ class PontoDeColeta(models.Model):
 
     def __str__(self):
         return self.nome
+
 
 
 class Feedback(models.Model):
