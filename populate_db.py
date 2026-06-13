@@ -47,8 +47,7 @@ eco_centro = PontoDeColeta.objects.create(
     nome="Ecoponto Centro",
     endereco="Av. Francisco Glicério, 1000 - Centro, Campinas - SP",
     latitude=-22.9064,
-    longitude=-47.0612,
-    ativo=True
+    longitude=-47.0612
 )
 eco_centro.materiais_aceitos.add(plastico, vidro, papelao, metais)
 
@@ -56,8 +55,7 @@ eco_taquaral = PontoDeColeta.objects.create(
     nome="Ecoponto Parque Taquaral",
     endereco="Av. Dr. Heitor Penteado, 1600 - Taquaral, Campinas - SP",
     latitude=-22.8732,
-    longitude=-47.0498,
-    ativo=True
+    longitude=-47.0498
 )
 eco_taquaral.materiais_aceitos.add(plastico, vidro, papelao, metais, eletronicos)
 
@@ -65,8 +63,7 @@ eco_ouro_verde = PontoDeColeta.objects.create(
     nome="Ecoponto Ouro Verde",
     endereco="Rua Plínio Aguinaldo Di Nardo, 200 - Ouro Verde, Campinas - SP",
     latitude=-22.9567,
-    longitude=-47.1354,
-    ativo=True
+    longitude=-47.1354
 )
 eco_ouro_verde.materiais_aceitos.add(plastico, papelao, metais, organicos)
 
