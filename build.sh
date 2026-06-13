@@ -11,5 +11,8 @@ python manage.py collectstatic --noinput
 # Aplica migrações no banco de dados
 python manage.py migrate
 
-# Popula o banco de dados com dados iniciais
-python manage.py shell < populate_db.py
+# Cria superusuário automaticamente se as variáveis estiverem definidas
+if [[ -n "${DJANGO_SUPERUSER_USERNAME}" && -n "${DJANGO_SUPERUSER_PASSWORD}" && -n "${DJANGO_SUPERUSER_EMAIL}" ]]; then
+  echo "Criando superusuário..."
+  python manage.py createsuperuser --noinput || echo "Superusuário já existe ou ocorreu um erro."
+fi
